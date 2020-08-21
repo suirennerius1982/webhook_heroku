@@ -21,6 +21,6 @@ app.handle('nerius', conv => {
 
 const expressApp = express().use(bodyParser.json())
 
-expressApp.post('fulfillment', app)
+expressApp.post('/fulfillment', app)
 
 module.exports = expressApp
