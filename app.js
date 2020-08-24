@@ -10,13 +10,18 @@ const app = conversation()
  
 // Register handlers for Actions SDK
  
-app.handle('nerius', conv => {
+app.handle('chargerStatus', conv => {
     console.log('here')
-  conv.add('Hi, how is it going?')
-  conv.add(new Image({
-    url: 'https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/imgs/160204193356-01-cat-500.jpg',
-    alt: 'A cat',
-  }))
+   const client = {
+    clientId: 1,
+    chargers: [
+      {
+        id: '2548',
+        status: 'CONNECTED'
+      }
+  ]
+  };
+  conv.session.params.client = client;
 })
 
 const expressApp = express().use(bodyParser.json())
