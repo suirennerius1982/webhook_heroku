@@ -10,7 +10,7 @@ const app = conversation()
  
 // Register handlers for Actions SDK
  
-app.handle('chargerStatus', conv => {
+app.handle('getChargers', conv => {
     console.log('here')
    const client = {
     clientId: 1,
@@ -22,6 +22,10 @@ app.handle('chargerStatus', conv => {
   ]
   };
   conv.session.params.client = client;
+})
+
+app.handle('chargerStatus', conv => {
+    
 })
 
 const expressApp = express().use(bodyParser.json())
