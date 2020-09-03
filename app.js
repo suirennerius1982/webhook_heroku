@@ -104,7 +104,6 @@ app.handle('setChargerStatus', async conv => {
 app.handle('setSchedule', async conv => {  
   console.log(JSON.stringify(conv));
   conv.add('Yeah');
-  conv.scene.next.name = "Main";
   /*if (conv.intent.params.action_lock && conv.intent.params.action_lock.resolved) {
     const action = conv.intent.params.action_lock.resolved;
   const response = await lockUnlockRequest(action);
