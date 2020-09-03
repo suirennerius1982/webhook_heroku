@@ -48,7 +48,7 @@ const lockUnlockRequest = (action) => {
 
 app.handle('create_user', async conv => {
   console.log(JSON.stringify(conv));
-  conv.add(JSON.stringify(conv));
+  //conv.add(JSON.stringify(conv));
   conv.scene.next.name = "Main";
 });
 
