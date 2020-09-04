@@ -116,7 +116,7 @@ app.handle('setSchedule', async conv => {
   const hourFromType = 'AM';
   const hourTo = '5';
   const hourToType = 'AM'; 
-  conv.add(`Your schedule will be created on ${frecuency} ${dayFrom} to ${dayTo} from ${hourFrom} ${hourFromType} to ${hourTo} ${hourToType}. Its rigth?`);
+  conv.add(`Your schedule will be created on ${frecuency} ${dayFrom} to ${dayTo} from ${hourFrom} ${hourFromType} to ${hourTo} ${hourToType}. Its right?`);
   conv.add(new Suggestion({ title: SuggestionTitle.YES}));
   conv.add(new Suggestion({ title: SuggestionTitle.NO}));
   /*if (conv.intent.params.action_lock && conv.intent.params.action_lock.resolved) {
