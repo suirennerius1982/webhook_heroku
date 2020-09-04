@@ -7,6 +7,11 @@ const {
   } = require('@assistant/conversation')
 const bodyParser = require('body-parser')
 
+const SuggestionTitle = {
+  YES: 'Yes',
+  NO: 'No'
+}
+
 // Create an app instance
 const app = conversation()
  
@@ -103,7 +108,16 @@ app.handle('setChargerStatus', async conv => {
 
 app.handle('setSchedule', async conv => {  
   console.log(JSON.stringify(conv));
-  conv.add('Yeah');
+  const frecuency = 'every';
+  const dayFrom = 'Monday';
+  const dayTo = 'Friday';
+  const hourFrom = '12';
+  const hourFromType = 'AM';
+  const hourTo = '5';
+  const hourToType = 'AM'; 
+  conv.add(`Your schedule will be created on ${frecuency} ${dayFrom} to ${dayTo} from ${hourFrom} ${hourFromType} to ${hourTo} ${hourToType}. Its rigth?`);
+  conv.add(new Suggestion({ title: SuggestionTitle.YES}));
+  conv.add(new Suggestion({ title: SuggestionTitle.NO}));
   /*if (conv.intent.params.action_lock && conv.intent.params.action_lock.resolved) {
     const action = conv.intent.params.action_lock.resolved;
   const response = await lockUnlockRequest(action);
