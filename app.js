@@ -3,6 +3,7 @@ const express = require('express')
 const fetch = require('node-fetch');
 const {
     conversation,
+    Suggestion,
     Image,
   } = require('@assistant/conversation')
 const bodyParser = require('body-parser')
@@ -10,10 +11,10 @@ const bodyParser = require('body-parser')
 const SuggestionTitle = {
   YES: 'Yes',
   NO: 'No'
-}
+};
 
 // Create an app instance
-const app = conversation()
+const app = conversation();
  
 // Register handlers for Actions SDK
 
